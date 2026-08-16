@@ -1,0 +1,29 @@
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+@keyframes fade-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.page-enter { animation: fade-in var(--t-med); }
+
+@keyframes pop-in { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+.pop-in { animation: pop-in var(--t-med); }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  70% { box-shadow: 0 0 0 8px rgba(76,141,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(76,141,255,0); }
+}
+.pulse { animation: pulse-ring 2s infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+.spin { animation: spin 0.8s linear infinite; }
+
+.stagger > * { animation: fade-in var(--t-med) both; }
+.stagger > *:nth-child(1){animation-delay:0.02s;} .stagger > *:nth-child(2){animation-delay:0.05s;}
+.stagger > *:nth-child(3){animation-delay:0.08s;} .stagger > *:nth-child(4){animation-delay:0.11s;}
+.stagger > *:nth-child(5){animation-delay:0.14s;} .stagger > *:nth-child(6){animation-delay:0.17s;}
+.stagger > *:nth-child(7){animation-delay:0.20s;} .stagger > *:nth-child(8){animation-delay:0.23s;}
+
+.confetti-piece { position: fixed; top: -10px; z-index: 500; border-radius: 2px; animation: confetti-fall linear forwards; }
+@keyframes confetti-fall {
+  to { transform: translateY(110vh) rotate(540deg); opacity: 0.2; }
+}
